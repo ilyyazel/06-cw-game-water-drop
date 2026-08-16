@@ -1,0 +1,392 @@
+/* Charity: water Brand Colors & Fonts
+
+Primary Colors:
+- Yellow:     #FFC907
+- Blue:       #2E9DF7
+
+Secondary Colors:
+- Light Blue: #8BD1CB
+- Green:      #4FCB53
+- Orange:     #FF902A
+- Red:        #F5402C
+- Dark Green: #159A48
+- Pink:       #F16061
+
+Fonts:
+- Proxima Nova
+- Avenir
+
+*/
+
+/* charity: water colors */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+
+    /* similar to charity water font */
+    font-family: Avenir, "Avenir Next", Arial, sans-serif;
+
+    color: #131313;
+}
+
+
+/* whole game */
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+    padding: 30px 20px;
+}
+
+
+/* title */
+
+.game-title {
+    font-size: 52px;
+    color: #131313;
+    text-align: center;
+}
+
+.game-tagline {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+}
+
+
+/* difficulty area */
+
+.difficulty-section {
+    text-align: center;
+}
+
+.difficulty-section p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.difficulty-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.difficulty-btn {
+    padding: 10px 18px;
+
+    background-color: white;
+    border: 2px solid #FFC907;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* selected difficulty */
+
+.difficulty-btn.active {
+    background-color: #FFC907;
+}
+
+
+.difficulty-btn:hover {
+    transform: scale(1.05);
+}
+
+
+#difficulty-info {
+    margin-top: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* score area */
+
+.score-panel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 800px;
+
+    padding: 15px;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.score,
+.goal,
+.timer {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* buttons */
+
+.game-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+
+#start-btn,
+#reset-btn {
+    padding: 12px 22px;
+
+    background-color: #FFC907;
+
+    color: #131313;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+#start-btn:hover,
+#reset-btn:hover {
+    transform: scale(1.05);
+}
+
+
+#reset-btn {
+    display: none;
+}
+
+
+/* game screen */
+
+#game-container {
+    width: 800px;
+    height: 600px;
+
+    background-color: #e6f7ff;
+
+    border: 3px solid #2E9DF7;
+
+    border-radius: 10px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* clean drops */
+
+.water-drop {
+    position: absolute;
+
+    background-color: #2E9DF7;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    animation: dropFall linear forwards;
+
+    transition: transform 0.1s ease;
+}
+
+
+.water-drop:hover {
+    transform: scale(1.1);
+}
+
+
+/* dirty drops */
+
+.bad-drop {
+    background-color: #8b5a2b;
+
+    border: 3px solid #68401e;
+}
+
+
+/* milestone message */
+
+#milestone-message {
+    min-height: 25px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #159A48;
+
+    text-align: center;
+}
+
+
+/* end game message */
+
+#game-message {
+    min-height: 30px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* falling animation */
+
+@keyframes dropFall {
+
+    from {
+        top: -80px;
+    }
+
+    to {
+        top: 100%;
+    }
+
+}
+
+
+/* charity water section */
+
+.mission-section {
+    width: 800px;
+
+    margin-top: 10px;
+    padding: 25px;
+
+    background-color: #FFC907;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+
+.mission-section h2 {
+    margin-bottom: 8px;
+}
+
+
+.mission-section p {
+    margin-bottom: 15px;
+}
+
+
+.charity-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.charity-links a {
+    color: #131313;
+
+    font-weight: bold;
+
+    text-decoration: underline;
+}
+
+
+/* confetti */
+
+.confetti {
+    position: fixed;
+
+    width: 10px;
+    height: 10px;
+
+    top: -20px;
+
+    animation: confettiFall 2s linear forwards;
+}
+
+
+@keyframes confettiFall {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(100vh) rotate(720deg);
+    }
+
+}
+
+
+/* smaller screens */
+
+@media (max-width: 850px) {
+
+    .score-panel,
+    #game-container,
+    .mission-section {
+        width: 95vw;
+    }
+
+
+    #game-container {
+        height: 65vh;
+    }
+
+
+    .score-panel {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .game-title {
+        font-size: 40px;
+    }
+
+
+    .score,
+    .goal,
+    .timer {
+        font-size: 19px;
+    }
+
+
+    .difficulty-buttons {
+        flex-wrap: wrap;
+    }
+
+
+    .charity-links {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}

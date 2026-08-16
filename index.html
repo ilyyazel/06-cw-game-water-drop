@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Drop Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="game-wrapper">
+
+        <!-- game title -->
+        <h1 class="game-title">Water Drop</h1>
+
+        <p class="game-tagline">
+            Catch the clean drops, avoid the dirty ones!
+        </p>
+
+
+        <!-- difficulty buttons -->
+        <div class="difficulty-section">
+
+            <p>Choose Difficulty</p>
+
+            <div class="difficulty-buttons">
+
+                <button class="difficulty-btn" data-difficulty="easy">
+                    Easy
+                </button>
+
+                <button class="difficulty-btn active" data-difficulty="normal">
+                    Normal
+                </button>
+
+                <button class="difficulty-btn" data-difficulty="hard">
+                    Hard
+                </button>
+
+            </div>
+
+            <!-- shows goal -->
+            <p id="difficulty-info">
+                Normal Mode - Reach 20 points!
+            </p>
+
+        </div>
+
+
+        <!-- score and timer -->
+        <div class="score-panel">
+
+            <div class="score">
+                Score: <span id="score">0</span>
+            </div>
+
+            <div class="goal">
+                Goal: <span id="goal">20</span>
+            </div>
+
+            <div class="timer">
+                Time: <span id="time">30</span>s
+            </div>
+
+        </div>
+
+
+        <!-- game buttons -->
+        <div class="game-buttons">
+
+            <button id="start-btn">
+                Start Game
+            </button>
+
+            <button id="reset-btn">
+                Reset
+            </button>
+
+        </div>
+
+
+        <!-- milestone messages -->
+        <p id="milestone-message"></p>
+
+
+        <!-- win or lose message -->
+        <p id="game-message"></p>
+
+
+        <!-- drops appear here -->
+        <div id="game-container"></div>
+
+
+        <!-- charity water information -->
+        <div class="mission-section">
+
+            <h2>Every Drop Counts</h2>
+
+            <p>
+                charity: water helps bring clean and safe water
+                to people around the world.
+            </p>
+
+            <div class="charity-links">
+
+                <a
+                    href="https://www.charitywater.org/"
+                    target="_blank"
+                >
+                    Visit charity: water
+                </a>
+
+                <a
+                    href="https://www.charitywater.org/donate"
+                    target="_blank"
+                >
+                    Donate
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
